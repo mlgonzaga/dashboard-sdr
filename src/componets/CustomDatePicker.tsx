@@ -9,14 +9,14 @@ const CustomDatePicker: React.FC = () => {
 
   return (
     <div className="relative w-full max-w-sm">
-      <div className="flex items-center">
+      <div className="flex items-center justify-center sm:justify-end">
         <DatePicker
           selected={selectedDate}
           onChange={(date) => setSelectedDate(date)}
           dateFormat="dd/MM/yyyy"
           placeholderText="dd/mm/aaaa"
           locale={ptBR}
-          className="w-full px-3 py-2 border rounded-l-md text-gray-700 focus:outline-none focus:ring-2  dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600"
+          className="w-full sm:w-[196px] h-[46px] text-center text-slate-600 font-medium p-2 rounded-md"
         />
         <button
           type="button"
@@ -28,7 +28,7 @@ const CustomDatePicker: React.FC = () => {
             }
           }}
         >
-          <Calendar className="bg-gray-200" size={26} />
+          <Calendar className="bg-gray-200" size={28} />
         </button>
       </div>
     </div>
@@ -36,3 +36,10 @@ const CustomDatePicker: React.FC = () => {
 };
 
 export default CustomDatePicker;
+
+
+<input
+className="w-full sm:w-[196px] h-[46px] text-center text-slate-600 font-medium p-2 rounded-md"
+type="date"
+placeholder="dd/mm/aaaa"
+>dd/mm/aaaa</input>
