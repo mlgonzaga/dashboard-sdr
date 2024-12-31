@@ -89,7 +89,7 @@ const OtherFunnel: React.FC = () => {
     };
   }, []);
 
-  return <div className="w-full" ref={chartRef} style={{ width: '100%', height: '100%' }} />;
+  return <div className="w-full" ref={chartRef} style={{ width: '100%', height: '350px' }} />;
 };
 
 export default OtherFunnel;
