@@ -5,7 +5,7 @@ import {
   RefreshCw,
   ThumbsUp,
 } from "lucide-react";
-import OtherFunnel from "./OtherFunnel";
+import GraficFunnel from "./GraficFunnel";
 
 export default function Dashboard() {
   return (
@@ -31,7 +31,7 @@ export default function Dashboard() {
               <Download />
               <span>Leads que entraram</span>
             </div>
-            <OtherFunnel />
+            <GraficFunnel />
           </div>
           <div className="bg-white rounded-md w-full max-w-[547px] h-[106px] flex flex-col text-slate-600 font-medium">
             <div className="flex items-center gap-1 p-2">
