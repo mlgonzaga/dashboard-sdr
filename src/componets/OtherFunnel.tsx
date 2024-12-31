@@ -26,6 +26,13 @@ const OtherFunnel: React.FC = () => {
       },
       legend: {
         data: ['Show', 'Click', 'Visit', 'Inquiry', 'Order'],
+        orient: window.innerWidth < 768 ? 'vertical' : 'horizontal', // Adaptável ao tamanho da tela
+        top: 10,
+        left: 0,
+        itemGap: 10,
+        textStyle: {
+          fontSize: 10,
+        },
       },
       series: [
         {

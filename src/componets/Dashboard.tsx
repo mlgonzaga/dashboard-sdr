@@ -6,6 +6,7 @@ import {
   ThumbsUp,
 } from "lucide-react";
 import OtherFunnel from "./OtherFunnel";
+import CustomDatePicker from "./CustomDatePicker";
 
 export default function Dashboard() {
   return (
@@ -15,11 +16,8 @@ export default function Dashboard() {
         <h1 className="text-white font-roboto font-bold text-2xl sm:text-4xl mb-4 sm:mb-0">
           Dashboard
         </h1>
-        <input
-          className="w-full sm:w-[196px] h-[46px] text-center text-slate-600 font-medium p-2 rounded-md"
-          type="date"
-          placeholder="dd/mm/aaaa"
-        />
+        <CustomDatePicker/>
+       
       </div>
 
       {/* Main Content */}
