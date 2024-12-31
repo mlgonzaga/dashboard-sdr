@@ -5,7 +5,7 @@ import {
   RefreshCw,
   ThumbsUp,
 } from "lucide-react";
-import OtherFunnel from "./OtherFunnel";
+import GraficFunnel from "./GraficFunnel";
 
 export default function Dashboard() {
   return (
@@ -16,7 +16,7 @@ export default function Dashboard() {
           Dashboard
         </h1>
         <input
-          className="w-full sm:w-[196px] h-[46px] text-center text-slate-600 font-medium p-2 rounded-md "
+          className="w-full sm:w-[196px] h-[46px] text-center text-slate-600 font-medium p-2 rounded-md"
           type="date"
           placeholder="dd/mm/aaaa"
         />
@@ -26,12 +26,12 @@ export default function Dashboard() {
       <div className="flex flex-col lg:flex-row justify-center gap-6">
         {/* Left Section */}
         <div className="flex flex-col items-center lg:items-center lg:w-1/2">
-          <div className="bg-white rounded-md w-full max-w-[547px] h-[357px] mb-6 text-slate-600 font-medium">
-            <div className="flex items-center gap-1 p-2">
+          <div className="bg-white rounded-md w-full max-w-[547px] max-h-[400px] mb-6 text-slate-600 font-medium">
+            <div className="flex items-center gap-1 p-1">
               <Download />
               <span>Leads que entraram</span>
             </div>
-            <OtherFunnel />
+            <GraficFunnel />
           </div>
           <div className="bg-white rounded-md w-full max-w-[547px] h-[106px] flex flex-col text-slate-600 font-medium">
             <div className="flex items-center gap-1 p-2">
@@ -43,7 +43,7 @@ export default function Dashboard() {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col lg:w-1/2 gap-5">
+        <div className="flex flex-col lg:w-1/2 gap-8">
           {[
             {
               icon: <ThumbsUp />,

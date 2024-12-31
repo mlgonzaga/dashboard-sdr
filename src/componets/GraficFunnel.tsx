@@ -14,7 +14,7 @@ const GraficFunnel: React.FC = () => {
     { action: 'Grupo 4', pv: 15000 },
     { action: 'Grupo 5', pv: 8000 },
     { action: 'Grupo 6', pv: 2000 },
-    
+
   ];
 
   if (data.length === 0) {
@@ -66,3 +66,5 @@ const GraficFunnel: React.FC = () => {
 };
 
 export default GraficFunnel;
+
+
