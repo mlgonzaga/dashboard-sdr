@@ -29,7 +29,7 @@ export default function Dashboard() {
           <div className="bg-white rounded-md w-full max-w-[547px] h-[357px] mb-6 text-slate-600 font-medium">
             <div className="flex items-center gap-2 p-2">
               <Download />
-              <span>Leads que entraram</span>
+              <span>Leads que entraram</span> 
             </div>
             <OtherFunnel/>
           </div>
