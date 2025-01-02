@@ -37,7 +37,7 @@ export default function RouteGroup() {
           <Route
             path="/"
             element={
-              <div className="flex flex-col w-full min-h-screen bg-gradient-to-r from-[#202020] to-[#172654]">
+              <div className="flex flex-col w-full min-h-screen bg-zinc-50">
                 <Navbar setActiveComponent={setActiveComponent} />
   
                 <div className="flex flex-1 items-center justify-center my-20 ">
@@ -49,7 +49,7 @@ export default function RouteGroup() {
           <Route
             path="/upload"
             element={
-              <div className="flex flex-col w-full min-h-screen bg-gradient-to-r from-[#202020] to-[#172654]">
+              <div className="flex flex-col w-full min-h-screen bg-gradient-to-r bg-zinc-50">
                 <Navbar setActiveComponent={setActiveComponent} />
   
                 <div className="flex flex-1 items-center justify-center my-20 ">
@@ -61,7 +61,7 @@ export default function RouteGroup() {
           <Route
             path="/support"
             element={
-              <div className="flex flex-col w-full min-h-screen bg-gradient-to-r from-[#202020] to-[#172654]">
+              <div className="flex flex-col w-full min-h-screen bg-gradient-to-r bg-zinc-50">
                 <Navbar setActiveComponent={setActiveComponent} />
   
                 <div className="flex flex-1 items-center justify-center my-20 ">

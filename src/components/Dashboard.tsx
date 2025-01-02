@@ -13,7 +13,7 @@ export default function Dashboard() {
     <div className="flex flex-col w-full max-w-[1378px] mx-auto p-4">
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
-        <h1 className="text-white font-roboto font-bold text-2xl sm:text-4xl mb-4 sm:mb-0">
+        <h1 className="text-zinc-500 font-roboto font-bold text-2xl sm:text-4xl mb-4 sm:mb-0 ">
           Dashboard
         </h1>
         <CustomDatePicker/>
@@ -21,17 +21,17 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row justify-center gap-6">
+      <div className="flex flex-col lg:flex-row justify-center gap-6 ">
         {/* Left Section */}
         <div className="flex flex-col items-center lg:items-center lg:w-1/2">
-          <div className="bg-white rounded-md w-full max-w-[547px] h-[357px] mb-6 text-slate-600 font-medium">
+          <div className="bg-white rounded-lg w-full max-w-[547px] h-[357px] mb-6 text-slate-600 font-medium border-2 drop-shadow-md">
             <div className="flex items-center gap-2 p-2">
               <Download />
               <span>Leads que entraram</span> 
             </div>
             <OtherFunnel/>
           </div>
-          <div className="bg-white rounded-md w-full max-w-[547px] h-[106px] flex flex-col text-slate-600 font-medium">
+          <div className="bg-white rounded-lg w-full max-w-[547px] h-[106px] flex flex-col text-slate-600 font-medium border-2 drop-shadow-md">
             <div className="flex items-center gap-1 p-2">
               <DollarSign />
               <span>Custo de qualificação</span>
@@ -59,12 +59,13 @@ export default function Dashboard() {
               value: "20",
             },
             {
+              icon:"-",
               label: "Sem conteúdo",
             },
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-md w-full max-w-[547px] h-[106px] flex flex-col text-slate-600 font-medium"
+              className="bg-white rounded-lg w-full max-w-[547px] h-[106px] flex flex-col text-slate-600 font-medium border-2 drop-shadow-md"
             >
               <div className="flex items-center gap-1 p-2">
                 {item.icon}
