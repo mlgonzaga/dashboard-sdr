@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 interface NavbarProps {
   setActiveComponent: (component: string) => void;
 }
@@ -8,7 +7,7 @@ interface NavbarProps {
 export default function Navbar({ setActiveComponent }: NavbarProps) {
   return (
     <div className="w-full">
-      <nav className="grid grid-cols-1 sm:grid-cols-5 items-center justify-between rounded-b-md w-full h-auto sm:h-44 bg-gradient-to-r from-zinc-900 to-blue-700 px-4 py-4">
+      <nav className="grid grid-cols-1  sm:grid-cols-5 items-center justify-between rounded-b-md w-full h-auto sm:h-44 bg-gradient-to-r from-zinc-900 to-blue-700 px-4 py-4">
         {/* Logo */}
         <div className="col-span-2 h-20 sm:h-44 place-self-center">
           <img
@@ -19,32 +18,32 @@ export default function Navbar({ setActiveComponent }: NavbarProps) {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-12 col-span-3">
-          <Link
-            to="/"
-            className="text-zinc-50 font-medium hover:underline"
-            onClick={() => setActiveComponent("Dashboard")}
-
-          >
-            Seu SDR
-          </Link>
-          <Link
-            to="/upload"
-            className="text-zinc-50 font-medium hover:underline"
-            onClick={() => setActiveComponent("Upload")}
-          >
-            Upload de arquivos
-          </Link>
-          <Link
-          to= "/support"
-            className="text-zinc-50 font-medium hover:underline"
-            onClick={() => setActiveComponent("Support")}
-          >
-            Suporte
-          </Link>
-        </div>
+        
+          <div className="flex flex-col sm:flex-row items-center sm:items-end mb-1 sm:mb-10 justify-center sm:justify-start gap-4 sm:gap-12 col-span-3 h-full ">
+            <Link
+              to="/"
+              className="text-zinc-50 font-medium hover:underline"
+              onClick={() => setActiveComponent("Dashboard")}
+            >
+              Seu SDR
+            </Link>
+            <Link
+              to="/upload"
+              className="text-zinc-50 font-medium hover:underline"
+              onClick={() => setActiveComponent("Upload")}
+            >
+              Upload de arquivos
+            </Link>
+            <Link
+              to="/support"
+              className="text-zinc-50 font-medium hover:underline"
+              onClick={() => setActiveComponent("Support")}
+            >
+              Suporte
+            </Link>
+          </div>
+        
       </nav>
     </div>
   );
 }
-
