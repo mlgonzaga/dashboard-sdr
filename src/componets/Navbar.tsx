@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 interface NavbarProps {
@@ -19,24 +20,28 @@ export default function Navbar({ setActiveComponent }: NavbarProps) {
 
         {/* Navigation Links */}
         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-12 col-span-3">
-          <button
+          <Link
+            to="/"
             className="text-zinc-50 font-medium hover:underline"
             onClick={() => setActiveComponent("Dashboard")}
+
           >
             Seu SDR
-          </button>
-          <button
+          </Link>
+          <Link
+            to="/upload"
             className="text-zinc-50 font-medium hover:underline"
             onClick={() => setActiveComponent("Upload")}
           >
             Upload de arquivos
-          </button>
-          <button
+          </Link>
+          <Link
+          to= "/support"
             className="text-zinc-50 font-medium hover:underline"
             onClick={() => setActiveComponent("Support")}
           >
             Suporte
-          </button>
+          </Link>
         </div>
       </nav>
     </div>
