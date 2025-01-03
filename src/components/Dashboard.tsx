@@ -21,7 +21,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col lg:flex-row justify-center gap-6 ">
+      <div className="flex flex-col lg:flex-row justify-center gap-6">
         {/* Left Section */}
         <div className="flex flex-col items-center lg:items-center lg:w-1/2">
           <div className="bg-white rounded-lg w-full max-w-[547px] h-[357px] mb-6 text-slate-600 font-medium border-2 drop-shadow-md">

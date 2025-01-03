@@ -40,7 +40,7 @@ export default function RouteGroup() {
               <div className="flex flex-col w-full min-h-screen bg-zinc-50">
                 <Navbar setActiveComponent={setActiveComponent} />
   
-                <div className="flex flex-1 items-center justify-center my-20 ">
+                <div className="flex flex-1 items-center justify-center my-10 ">
                   {activeComponent === "Dashboard" && <Dashboard />}
                 </div>
               </div>
@@ -49,10 +49,10 @@ export default function RouteGroup() {
           <Route
             path="/upload"
             element={
-              <div className="flex flex-col w-full min-h-screen bg-gradient-to-r bg-zinc-50">
+              <div className="flex flex-col w-full min-h-screen  bg-zinc-50">
                 <Navbar setActiveComponent={setActiveComponent} />
   
-                <div className="flex flex-1 items-center justify-center my-20 ">
+                <div className="flex flex-1 items-start justify-center my-20 ">
                   {activeComponent === "Upload" && <Upload />}
                 </div>
               </div>
@@ -61,7 +61,7 @@ export default function RouteGroup() {
           <Route
             path="/support"
             element={
-              <div className="flex flex-col w-full min-h-screen bg-gradient-to-r bg-zinc-50">
+              <div className="flex flex-col w-full min-h-screen  bg-zinc-50">
                 <Navbar setActiveComponent={setActiveComponent} />
   
                 <div className="flex flex-1 items-center justify-center my-20 ">
