@@ -54,7 +54,7 @@ const Upload: React.FC = () => {
 
   return (
     <form 
-    className="flex flex-col align-top"
+    className="flex flex-col align-top lg:items-center lg:w-1/2"
     action="/submit">
       <div
         onClick={handleClick}
@@ -75,7 +75,7 @@ const Upload: React.FC = () => {
           hidden
           onChange={handleFileSelect}
         />
-        <CloudUpload className="font-medium w-[100px] h-[100px] " />
+        <CloudUpload className= {`font-medium w-[100px] h-[100px] ${isDragging ? "text-blue-700" : "bg-zinc-100"}`} />
         <span
           className={`text-center p-2 ${isDragging ? "bg-blue-600" : "bg-zinc-100"}`}
         >
@@ -109,7 +109,7 @@ const Upload: React.FC = () => {
 
         {/* Botão de submit*/}
         {files.length > 0 && (
-          <button type="submit" onClick={handleSubmit} className="absolute right-0 mt-3 rounded-md px-2 bg-zinc-500 text-zinc-50 font-medium hover:opacity-25 delay-150">
+          <button type="submit" onClick={handleSubmit} className="absolute right-0 mt-3 rounded-md px-2 bg-zinc-500 text-zinc-50 font-medium hover:opacity-25 delay-100-">
             Enviar Arquivos
           </button>
         )}

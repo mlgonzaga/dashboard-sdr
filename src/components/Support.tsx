@@ -1,6 +1,12 @@
 const Support: React.FC = () => {
     return(
-        <h1 className="bg-zinc-50">Suporte</h1>
+        <div>
+            <form action="">
+                <h1 className="bg-zinc-50">Suporte</h1>
+
+
+            </form>
+        </div>
     )
 }
 
