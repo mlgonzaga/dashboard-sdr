@@ -54,7 +54,7 @@ const Upload: React.FC = () => {
 
   return (
     <form 
-    className="flex flex-col align-top lg:items-center lg:w-1/2"
+    className="flex flex-col align-top w-auto sm:w-[500px]"
     action="/submit">
       <div
         onClick={handleClick}
@@ -63,7 +63,7 @@ const Upload: React.FC = () => {
         onDrop={handleDrop}
         role="button"
         tabIndex={0}
-        className={`input-field  flex flex-col items-center justify-center border-4 border-dashed  w-[500px] h-[300px] text-zinc-400 rounded-xl relative hover:opacity-60 shadow-lg cursor-pointer ${isDragging ? "bg-blue-600 border-blue-700" : "bg-zinc-100 border-zinc-400"}`}
+        className={`input-field  flex flex-col items-center justify-center border-4 border-dashed h-[300px] text-zinc-400 rounded-xl relative hover:opacity-60 shadow-lg cursor-pointer ${isDragging ? "bg-blue-600 border-blue-700" : "bg-zinc-100 border-zinc-400"}`}
 
       >
         <input
