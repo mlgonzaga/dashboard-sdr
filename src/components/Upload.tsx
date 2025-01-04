@@ -1,12 +1,14 @@
-import { CloudUpload } from "lucide-react";
+
+
+import { CloudUpload, X } from "lucide-react";
 import { useRef, useState } from "react";
 
 const Upload: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // Verifica se a div foi clicada e da referencia ao input file
   const handleClick = () => {
     inputRef.current?.click();
   };
@@ -17,19 +19,15 @@ const Upload: React.FC = () => {
     }
   };
 
-  // Verifica se o evento de arrastar ocorreu
-
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(true);
   };
 
-  // Verifica se o evento de arrastar ocorreu mas não soltou o arquivo
   const handleDragLeave = () => {
     setIsDragging(false);
   };
 
-  // Verifica se o evento de arrastar ocorreu e soltou o arquivo
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     setIsDragging(false);
@@ -41,11 +39,18 @@ const Upload: React.FC = () => {
       (file) => !files.some((f) => f.name === file.name && f.size === file.size)
     );
 
+    if (files.length + uniqueFiles.length > 2) {
+      setErrorMessage("Você só pode enviar no máximo 2 arquivos.");
+      return;
+    }
+
     setFiles((prev) => [...prev, ...uniqueFiles]);
+    setErrorMessage(null); // Limpar a mensagem de erro caso o usuário corrija
   };
 
   const handleRemoveFile = (fileName: string) => {
     setFiles((prev) => prev.filter((file) => file.name !== fileName));
+    setErrorMessage(null); // Limpar a mensagem de erro ao remover
   };
 
   const handleSubmit = () => {
@@ -53,9 +58,10 @@ const Upload: React.FC = () => {
   };
 
   return (
-    <form 
-    className="flex flex-col align-top w-auto sm:w-[500px]"
-    action="/submit">
+    <form
+      className="flex flex-col align-top w-auto sm:w-[500px]"
+      action="/submit"
+    >
       <div
         onClick={handleClick}
         onDragOver={handleDragOver}
@@ -63,8 +69,9 @@ const Upload: React.FC = () => {
         onDrop={handleDrop}
         role="button"
         tabIndex={0}
-        className={`input-field  flex flex-col items-center justify-center border-4 border-dashed h-[300px] text-zinc-400 rounded-xl relative hover:opacity-60 shadow-lg cursor-pointer ${isDragging ? "bg-blue-600 border-blue-700" : "bg-zinc-100 border-zinc-400"}`}
-
+        className={`input-field flex flex-col items-center justify-center border-4 border-dashed h-[300px] text-zinc-400 rounded-xl relative hover:opacity-60 shadow-lg cursor-pointer ${
+          isDragging ? "bg-blue-600 border-blue-700" : "bg-zinc-100 border-zinc-400"
+        }`}
       >
         <input
           ref={inputRef}
@@ -75,41 +82,54 @@ const Upload: React.FC = () => {
           hidden
           onChange={handleFileSelect}
         />
-        <CloudUpload className= {`font-medium w-[100px] h-[100px] ${isDragging ? "text-blue-700" : "bg-zinc-100"}`} />
+        <CloudUpload
+          className={`font-medium w-[100px] h-[100px] ${
+            isDragging ? "text-blue-700" : "bg-zinc-100"
+          }`}
+        />
         <span
-          className={`text-center p-2 ${isDragging ? "bg-blue-600" : "bg-zinc-100"}`}
+          className={`text-center p-2 ${
+            isDragging ? "bg-blue-600" : "bg-zinc-100"
+          }`}
         >
           Arraste e solte aqui ou clique para importar localmente
         </span>
       </div>
 
-      {/* Lista de arquivos*/}
+      {/* Exibir mensagem de erro */}
+      {errorMessage && (
+        <div className="mt-2 text-red-500 text-sm font-medium">{errorMessage}</div>
+      )}
 
-      <div className="flex justify-between relative w-300px  border-b-slate-400 max-h-[300px] overflow-y-auto">
-        <ul className="mt-4">
-          {files.map((file, index) => (
-            <li key={file.name} 
-            className={`flex flex-col items-start w-[300px] overflow-x-hidden${
-              index !== 0 ? "before:content-[''] before:block before:h-[1px] before:w-full before:bg-gray-300 before:my-2" : ""}`}>
-              <div>
-                <p className="">{file.name}</p>
-                <p className="">
+      <div className="flex flex-col mt-4 space-y-2">
+        <ul className="max-h-[150px] overflow-y-auto space-y-2">
+          {files.map((file) => (
+            <li
+              key={file.name}
+              className="flex justify-between items-center border-b pb-2"
+            >
+              <div className="overflow-hidden text-ellipsis">
+                <p>{file.name}</p>
+                <p className="text-sm text-gray-500">
                   {`${(file.size / 1024).toFixed(2)} KB`} - {file.type || "N/A"}
                 </p>
               </div>
               <button
-                onClick={() => handleRemoveFile(file.name)}
-                className="text-red-500 hover:text-red-700 font-medium"
+                 onClick={() => handleRemoveFile(file.name)}
+                className="text-zinc-500 hover:text-zinc-700 font-medium"
               >
-                Remover
-              </button>
+                <X />
+            </button>
             </li>
           ))}
         </ul>
 
-        {/* Botão de submit*/}
         {files.length > 0 && (
-          <button type="submit" onClick={handleSubmit} className="absolute right-0 mt-3 rounded-md px-2 bg-zinc-500 text-zinc-50 font-medium hover:opacity-25 delay-100-">
+          <button
+            type="submit"
+            onClick={handleSubmit}
+            className="self-end mt-4 rounded-md px-4 py-2 bg-zinc-500 text-zinc-50 font-medium hover:opacity-75"
+          >
             Enviar Arquivos
           </button>
         )}

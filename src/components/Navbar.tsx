@@ -7,7 +7,7 @@ interface NavbarProps {
 export default function Navbar({ setActiveComponent }: NavbarProps) {
   return (
     <div className="w-full">
-      <nav className="drop-shadow-md grid grid-cols-1  sm:grid-cols-5 items-center justify-between rounded-b-md w-full h-auto sm:h-44 bg-gradient-to-r from-zinc-900 to-blue-700 px-4 py-4">
+      <nav className="drop-shadow-md grid grid-cols-1  sm:grid-cols-5 items-center justify-between rounded-b-md w-full h-auto sm:h-44  bg-zinc-400 px-4 py-4">
         {/* Logo */}
         <div className="col-span-2 h-20 sm:h-40 place-self-center">
           <img
@@ -29,7 +29,7 @@ export default function Navbar({ setActiveComponent }: NavbarProps) {
             </Link>
             <Link
               to="/upload"
-              className="text-zinc-50 font-medium hover:underline"
+              className="text-zinc-50 font-medium hover:underline "
               onClick={() => setActiveComponent("Upload")}
             >
               Upload de arquivos
