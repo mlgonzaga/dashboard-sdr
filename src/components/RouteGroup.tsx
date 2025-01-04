@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Upload from "./Upload";
 import Dashboard from "./Dashboard";
 import { useEffect, useState } from "react";
-import Support from "./Support";
+import SupportForm from "./SupportForm";
 
 export default function RouteGroup() {
     const [activeComponent, setActiveComponent] = useState<string>();
@@ -65,7 +65,7 @@ export default function RouteGroup() {
                 <Navbar setActiveComponent={setActiveComponent} />
   
                 <div className="flex flex-1 items-center justify-center my-20 ">
-                  {activeComponent === "Support" && <Support />}
+                  {activeComponent === "Support" && <SupportForm />}
                 </div>
               </div>
             }
