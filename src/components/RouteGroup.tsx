@@ -40,7 +40,7 @@ export default function RouteGroup() {
               <div className="flex flex-col w-full min-h-screen bg-zinc-50">
                 <Navbar setActiveComponent={setActiveComponent} />
   
-                <div className="flex flex-1 items-center justify-center my-10 ">
+                <div className="flex flex-1 items-center justify-center my-10 sm:mx-5">
                   {activeComponent === "Dashboard" && <Dashboard />}
                 </div>
               </div>
