@@ -2,7 +2,7 @@
 
 A interface do projeto é composta por um menu com as opções: dashboard, upload de arquivos e suporte.
 
-![Navbar](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/ec87877d-ee0f-4df0-a63a-37ed53db9d2b/image.png)
+<img src="navbar.png" alt="navbar"/>
 
 ## Dashboard:
   Irá exibir os dados dos leads que entrarem pelo whatsapp e exibir de acordo com a data selecionada, a quantidade baseada nos status. Ex: Leads que entraram, Leads qualificados, Custo de qualificação, Leads que foram pro closer e Custo de qualificação.
@@ -13,12 +13,12 @@ A interface do projeto é composta por um menu com as opções: dashboard, uploa
 ## Upload de arquivos:
   Irá disponibilzar uma área onde o usuário poderá arrastar ou anexar um arquivo(PDF ou txt).
 
-![Upload](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/6421ca8f-7984-4eda-9294-4751700ffaec/image.png)
+<img src="upload.png" alt="upload"/>
 
 ## Suporte:
   Irá exibir um formulário para criação de um ticket de  suporte com Nome, Título e Descrição do problema.
 
-![Suporte](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/e77a8b14-c1d1-44d4-b054-790a315cf459/image.png)
+<img src="suporte.png" alt="suporte"/>
 
 
 # Tecnologias utilizadas
