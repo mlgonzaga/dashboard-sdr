@@ -7,7 +7,8 @@ A interface do projeto é composta por um menu com as opções: dashboard, uploa
 ## Dashboard:
   Irá exibir os dados dos leads que entrarem pelo whatsapp e exibir de acordo com a data selecionada, a quantidade baseada nos status. Ex: Leads que entraram, Leads qualificados, Custo de qualificação, Leads que foram pro closer e Custo de qualificação.
 
-![Dashboard](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/a2614701-0d93-4f76-a568-a38026eb074f/image.png)
+  <img src="/dashboard-sdr/images-readme/dashboard.png"/>
+
 
 ## Upload de arquivos:
   Irá disponibilzar uma área onde o usuário poderá arrastar ou anexar um arquivo(PDF ou txt).
