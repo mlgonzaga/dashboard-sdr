@@ -1,50 +1,30 @@
-# React + TypeScript + Vite
+# Projeto SDR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A interface do projeto é composta por um menu com as opções: dashboard, upload de arquivos e suporte.
 
-Currently, two official plugins are available:
+![Navbar](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/ec87877d-ee0f-4df0-a63a-37ed53db9d2b/image.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Dashboard:
+  Irá exibir os dados dos leads que entrarem pelo whatsapp e exibir de acordo com a data selecionada, a quantidade baseada nos status. Ex: Leads que entraram, Leads qualificados, Custo de qualificação, Leads que foram pro closer e Custo de qualificação.
 
-## Expanding the ESLint configuration
+![Dashboard](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/a2614701-0d93-4f76-a568-a38026eb074f/image.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Upload de arquivos:
+  Irá disponibilzar uma área onde o usuário poderá arrastar ou anexar um arquivo(PDF ou txt).
 
-- Configure the top-level `parserOptions` property like this:
+![Upload](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/6421ca8f-7984-4eda-9294-4751700ffaec/image.png)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Suporte:
+  Irá exibir um formulário para criação de um ticket de  suporte com Nome, Título e Descrição do problema.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![Suporte](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e15eb47-be16-4724-b8a6-f06d2e1459df/e77a8b14-c1d1-44d4-b054-790a315cf459/image.png)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Tecnologias utilizadas
+
+  A interface é construida com o framework [React](https://react.dev/) utilizando a ferramenta [Vite](https://vite.dev/) para criação do projeto inicial, [TypeScript](https://www.typescriptlang.org/)  para tipagem dos dados, [TailwindCSS](https://tailwindcss.com/) para estilização dos componentes, [Lucide](https://lucide.dev/guide/packages/lucide-react) para ícones, a biblioteca [Echarts](https://echarts.apache.org/examples/en/editor.html?c=funnel) para o grafico de funil, [React-datepicker](https://reactdatepicker.com/) junto com [date-fns](https://date-fns.org/) para criar o o componente CustomDatePicker.tsx, [Shadcn-ui](https://ui.shadcn.com/docs) para criar o formulário de suporte e por fim [React-Hook-Fom](https://ui.shadcn.com/docs/components/form) junto com [Zod](https://zod.dev/) para validação de dados do formulário.
+
+
+
+
+

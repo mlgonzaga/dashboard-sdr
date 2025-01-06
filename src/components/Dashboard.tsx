@@ -5,7 +5,7 @@ import {
   RefreshCw,
   ThumbsUp,
 } from "lucide-react";
-import OtherFunnel from "./OtherFunnel";
+import OtherFunnel from "./FunnelChart";
 import CustomDatePicker from "./CustomDatePicker";
 
 export default function Dashboard() {
