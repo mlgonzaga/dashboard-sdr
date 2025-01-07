@@ -6,8 +6,9 @@ import Upload from "./Upload";
 import Dashboard from "./Dashboard";
 import { useEffect, useState } from "react";
 import SupportForm from "./SupportForm";
-import MenuAdmin from "./menuAdmin";
 import { Menu } from "lucide-react";
+import MenuAdmin from "./MenuAdmin";
+
 
 
 const mockUser = {
