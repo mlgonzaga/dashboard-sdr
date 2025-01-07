@@ -13,12 +13,12 @@ A interface do projeto é composta por um menu com as opções: dashboard, uploa
 ## Upload de arquivos:
   Irá disponibilzar uma área onde o usuário poderá arrastar ou anexar um arquivo(PDF ou txt).
 
-<img src="3upload.png" alt="upload"/>
+<img src="4upload.png" alt="upload"/>
 
 ## Suporte:
   Irá exibir um formulário para criação de um ticket de  suporte com Nome, Título e Descrição do problema.
 
-<img src="4suporte.png" alt="suporte"/>
+<img src="3suporte.png" alt="suporte"/>
 
 
 # Tecnologias utilizadas
