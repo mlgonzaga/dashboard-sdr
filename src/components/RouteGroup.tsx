@@ -38,31 +38,30 @@ export default function RouteGroup() {
     }
   }, [location]);
 
+   // Simulação de autenticação
+  const isAuthenticated = mockUser !== null
   const isAdmin = mockUser.role === "admin";
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <div className="flex w-full min-h-screen bg-zinc-50">
-      {/* Botão de hambúrguer */}
-      {isAdmin &&
-        !isMenuOpen && ( // Esconde o botão quando o menu estiver aberto
-          <button
-            onClick={toggleMenu}
-            className="fixed top-4 left-4 z-50 bg-zinc-50 p-2 rounded-md shadow-md text-zinc-500"
-          >
-            <Menu />
-          </button>
-        )}
+      {/* Botão de hambúrguer - Apenas para usuários autenticados */}
+      {isAuthenticated && isAdmin && location.pathname !== "/" && !isMenuOpen && (
+  <button
+    onClick={toggleMenu}
+    className="fixed top-4 left-4 z-50 bg-zinc-50 p-2 rounded-md shadow-md text-zinc-500"
+  >
+    <Menu />
+  </button>
+)}
 
-      {/* MenuAdmin */}
-      {isAdmin && <MenuAdmin isOpen={isMenuOpen} toggleMenu={toggleMenu} />}
+      {/* MenuAdmin - Apenas para usuários autenticados */}
+      {isAuthenticated && isAdmin && <MenuAdmin isOpen={isMenuOpen} toggleMenu={toggleMenu} />}
 
       {/* Main Content */}
       <div
-        className={`flex-1 ${
-          isMenuOpen ? "ml-64" : "ml-0"
-        } sm:ml-0 transition-all duration-300`}
+        className={`flex-1 ${isMenuOpen ? "ml-64" : "ml-0"} sm:ml-0 transition-all duration-300`}
       >
         <Routes>
           <Route
