@@ -39,18 +39,22 @@ const SupportForm: React.FC = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-9 border-2 w-[500px] h-[400px] p-8 rounded-md drop-shadow-md">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-7 border-2 w-[400px] h-[500px] p-8 rounded-md drop-shadow-md "
+      >
         <FormField
-        
           control={form.control}
           name="name"
           render={({ field }) => (
-            <FormItem >
+            <FormItem>
               <FormLabel>Nome</FormLabel>
               <FormControl>
                 <Input placeholder="Seu nome" {...field} />
               </FormControl>
-              <FormMessage />
+              <div className="h-[1rem]">
+                <FormMessage />
+              </div>
             </FormItem>
           )}
         />
@@ -63,7 +67,9 @@ const SupportForm: React.FC = () => {
               <FormControl>
                 <Input placeholder="Título da solicitação" {...field} />
               </FormControl>
-              <FormMessage />
+              <div className="h-[1rem]">
+                <FormMessage />
+              </div>
             </FormItem>
           )}
         />
@@ -76,11 +82,15 @@ const SupportForm: React.FC = () => {
               <FormControl>
                 <Input placeholder="Descrição da solicitação" {...field} />
               </FormControl>
-              <FormMessage />
+              <div className="h-[1rem]">
+                <FormMessage />
+              </div>
             </FormItem>
           )}
         />
-        <Button type="submit">Enviar</Button>
+        <div className="flex justify-end bottom-0 flex-col gap-2">
+          <Button type="submit">Enviar</Button>
+        </div>
       </form>
     </Form>
   );
