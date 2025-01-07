@@ -1,5 +1,3 @@
-
-
 import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Upload from "./Upload";
@@ -8,13 +6,12 @@ import { useEffect, useState } from "react";
 import SupportForm from "./SupportForm";
 import { Menu } from "lucide-react";
 import MenuAdmin from "./MenuAdmin";
-
-
+import Login from "./Login";
 
 const mockUser = {
   id: 3,
   email: "usuario1@biofy.com",
-  role: "admin", 
+  role: "admin",
 };
 
 export default function RouteGroup() {
@@ -37,28 +34,26 @@ export default function RouteGroup() {
         break;
       }
       default:
-        setActiveComponent("Dashboard");
+        setActiveComponent("/");
     }
   }, [location]);
 
   const isAdmin = mockUser.role === "admin";
 
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev );
-
-  
+  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
     <div className="flex w-full min-h-screen bg-zinc-50">
       {/* Botão de hambúrguer */}
-      {isAdmin && !isMenuOpen && ( // Esconde o botão quando o menu estiver aberto
-        <button
-          onClick={toggleMenu}
-          className="fixed top-4 left-4 z-50 bg-zinc-50 p-2 rounded-md shadow-md text-zinc-500"
-        >
-           <Menu/>
-
-        </button>
-      )}
+      {isAdmin &&
+        !isMenuOpen && ( // Esconde o botão quando o menu estiver aberto
+          <button
+            onClick={toggleMenu}
+            className="fixed top-4 left-4 z-50 bg-zinc-50 p-2 rounded-md shadow-md text-zinc-500"
+          >
+            <Menu />
+          </button>
+        )}
 
       {/* MenuAdmin */}
       {isAdmin && <MenuAdmin isOpen={isMenuOpen} toggleMenu={toggleMenu} />}
@@ -72,6 +67,15 @@ export default function RouteGroup() {
         <Routes>
           <Route
             path="/"
+            element={
+              <div className="flex flex-1 items-center justify-center my-10 sm:mx-5">
+                <Login />
+              </div>
+            }
+          />
+
+          <Route
+            path="/dashboard"
             element={
               <div className="flex flex-col w-full min-h-screen">
                 <Navbar setActiveComponent={setActiveComponent} />
