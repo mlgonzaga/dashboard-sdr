@@ -42,11 +42,11 @@ const MenuAdmin: React.FC<MenuAdminProps> = ({ isOpen, toggleMenu }) => {
     >
       <button
         onClick={toggleMenu}
-        className="absolute top-4 right-4 p-2 bg-gray-200 rounded-md"
+        className="absolute top-4 right-4 p-2 bg-zinc-50 text-zinc-500 rounded-md"
       >
         {isOpen ? <CircleChevronLeft/> : <X/>}
       </button>
-      <h2 className="text-xl font-bold mb-4">Admin Menu</h2>
+      <h2 className="text-xl text-zinc-500 font-bold mb-4">Admin Menu</h2>
       <input
         type="text"
         placeholder="Buscar cliente..."
@@ -56,13 +56,13 @@ const MenuAdmin: React.FC<MenuAdminProps> = ({ isOpen, toggleMenu }) => {
       />
       
      {filteredClientes.length === 0 ? (
-        <p className="text-red-500">Cliente não encontrado</p> // Mensagem de cliente não encontrado
+        <p className="text-red-500">Cliente não encontrado</p>
 ) : (
       <ul className="space-y-2">
         {filteredClientes.map((cliente) => (
           <li
             key={cliente.id}
-            className="px-3 py-2 bg-white rounded-md shadow-sm hover:bg-gray-200 cursor-pointer"
+            className="px-3 py-2 bg-zinc-50 rounded-md shadow-sm hover:bg-zinc-200 cursor-pointer"
           >
             {cliente.nome}
           </li>

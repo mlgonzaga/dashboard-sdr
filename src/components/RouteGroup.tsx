@@ -14,7 +14,7 @@ import MenuAdmin from "./MenuAdmin";
 const mockUser = {
   id: 3,
   email: "usuario1@biofy.com",
-  role: "admin", // Alterar para "user" para testar um usuário comum.
+  role: "admin", 
 };
 
 export default function RouteGroup() {
@@ -49,11 +49,11 @@ export default function RouteGroup() {
 
   return (
     <div className="flex w-full min-h-screen bg-zinc-50">
-      {/* Botão de hambúrguer ou seta */}
-      {isAdmin && !isMenuOpen && ( // Esconder o botão quando o menu estiver aberto
+      {/* Botão de hambúrguer */}
+      {isAdmin && !isMenuOpen && ( // Esconde o botão quando o menu estiver aberto
         <button
           onClick={toggleMenu}
-          className="fixed top-4 left-4 z-50 bg-gray-100 p-2 rounded-md shadow-md"
+          className="fixed top-4 left-4 z-50 bg-zinc-50 p-2 rounded-md shadow-md text-zinc-500"
         >
            <Menu/>
 
