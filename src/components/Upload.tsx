@@ -39,7 +39,7 @@ const Upload: React.FC = () => {
       (file) => !files.some((f) => f.name === file.name && f.size === file.size)
     );
 
-    if (files.length + uniqueFiles.length > 2) {
+    if (files.length + uniqueFiles.length > 15) {
       setErrorMessage("Você só pode enviar no máximo 2 arquivos.");
       return;
     }
