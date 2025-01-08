@@ -1,17 +1,14 @@
 # Imagem base para o Node.js
-FROM node:18
+FROM node:22
 
 # Configuração do diretório de trabalho
 WORKDIR /app
 
-# Copia os arquivos do projeto, incluindo o pnpm-lock.yaml
-COPY package.json pnpm-lock.yaml ./
-
-# Instala o pnpm globalmente
-RUN npm install -g pnpm
+# Copia os arquivos do projeto, incluindo o package.json
+COPY package.json package-lock.json ./
 
 # Instala as dependências do projeto
-RUN pnpm install
+RUN npm install
 
 # Copia o restante do código
 COPY . .
@@ -20,4 +17,4 @@ COPY . .
 EXPOSE 5173
 
 # Comando para rodar o Vite
-CMD ["pnpm", "run", "dev"]
+CMD ["npm", "run", "dev", "--", "--host"]
