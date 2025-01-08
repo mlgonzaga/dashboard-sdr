@@ -21,7 +21,7 @@ export default function Navbar({ setActiveComponent }: NavbarProps) {
         
           <div className="flex flex-col sm:flex-row items-center sm:items-end mb-1 sm:mb-10 justify-center sm:justify-start gap-4 sm:gap-12 col-span-3 h-full">
             <Link
-              to="/"
+              to="/dashboard"
               className="text-zinc-50 font-medium hover:underline"
               onClick={() => setActiveComponent("Dashboard")}
             >
