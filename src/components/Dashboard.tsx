@@ -2,6 +2,8 @@ import {
   CircleCheckBig,
   DollarSign,
   Download,
+  FilterX,
+  MessageSquareX,
   RefreshCw,
   ThumbsUp,
 } from "lucide-react";
@@ -41,11 +43,21 @@ export default function Dashboard() {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col lg:w-1/2 gap-5">
+        <div className="flex flex-wrap lg:w-1/2 gap-5">
           {[
             {
               icon: <ThumbsUp />,
               label: "Leads qualificados",
+              value: "20",
+            },
+            {
+              icon: <FilterX />,
+              label: "Leads não qualificados",
+              value: "20",
+            },
+            {
+              icon: <MessageSquareX />,
+              label: "Leads que não responderam",
               value: "20",
             },
             {
@@ -58,6 +70,7 @@ export default function Dashboard() {
               label: "Leads que foram pro closer",
               value: "20",
             },
+            
             {
               icon:"-",
               label: "Sem conteúdo",
@@ -65,7 +78,7 @@ export default function Dashboard() {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg w-full max-w-[547px] h-[106px] flex flex-col text-slate-600 font-medium border-2 drop-shadow-md"
+              className="bg-white rounded-lg w-full max-w-[547px] h-[106px] sm:max-w-[270px] flex flex-col text-slate-600 font-medium border-2 drop-shadow-md"
             >
               <div className="flex items-center gap-1 p-2">
                 {item.icon}
